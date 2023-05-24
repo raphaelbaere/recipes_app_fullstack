@@ -1,20 +1,22 @@
+'use strict';
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('areas', {
-      idArea: {
+    await queryInterface.createTable('mealMeasures', {
+      idMeasure: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      strArea: {
+      strMeasure: {
         type: Sequelize.STRING,
         allowNull: false,
-      },
+      }
     });
   },
 
-  down: async (queryInterface) => {
-    await queryInterface.dropTable('areas');
-  },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('mealMeasures');
+  }
 };
