@@ -1,13 +1,16 @@
 import { DataTypes, Model } from "sequelize";
 import db from ".";
-import DrinkCategoriesModel from "./DrinkCategoriesModel";
+import MealCategoriesModel from "./MealCategoriesModel";
 
-export type DrinksAttributes = {
-  idDrink: number;
-  strDrink: string;
+export type MealsAttributes = {
+  idMeal: number;
+  strMeal: string;
   category: string;
+  area: string;
   strInstructions: string;
   strMealThumb: string;
+  strYoutube: string;
+  strTags: string;
   strIngredient1: string;
   strIngredient2: string;
   strIngredient3: string;
@@ -22,14 +25,17 @@ export type DrinksAttributes = {
   strMeasure6: string;
 }
 
-export type DrinksCreationAttributes = Omit<DrinksAttributes, 'id'>;
+export type MealsCreationAttributes = Omit<MealsAttributes, 'id'>;
 
-export default class DrinksModel extends Model<DrinksAttributes, DrinksCreationAttributes> {
-  declare idDrink: number;
-  declare strDrink: string;
+export default class MealsModel extends Model<MealsAttributes, MealsCreationAttributes> {
+  declare idMeal: number;
+  declare strMeal: string;
   declare category: string;
+  declare area: string;
   declare strInstructions: string;
   declare strMealThumb: string;
+  declare strYoutube: string;
+  declare strTags: string;
   declare strIngredient1: string;
   declare strIngredient2: string;
   declare strIngredient3: string;
@@ -44,18 +50,22 @@ export default class DrinksModel extends Model<DrinksAttributes, DrinksCreationA
   declare strMeasure6: string;
 }
 
-DrinksModel.init({
-  idDrink: {
+MealsModel.init({
+  idMeal: {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
   },
-  strDrink: {
+  strMeal: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   category: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  area: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -67,11 +77,19 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  strYoutube: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  strTags: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   strIngredient1: {
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkIngredients',
+      model: 'mealIngredients',
       key: 'strIngredient1',
     },
   },
@@ -79,7 +97,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkIngredients',
+      model: 'mealIngredients',
       key: 'strIngredient2',
     },
   },
@@ -87,7 +105,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkIngredients',
+      model: 'mealIngredients',
       key: 'strIngredient3',
     },
   },
@@ -95,7 +113,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkIngredients',
+      model: 'mealIngredients',
       key: 'strIngredient4',
     },
   },
@@ -103,7 +121,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkIngredients',
+      model: 'mealIngredients',
       key: 'strIngredient5',
     },
   },
@@ -111,7 +129,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkIngredients',
+      model: 'mealIngredients',
       key: 'strIngredient6',
     },
   },
@@ -119,7 +137,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkMeasures',
+      model: 'mealMeasures',
       key: 'strMeasure1',
     },
   },
@@ -127,7 +145,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkMeasures',
+      model: 'mealMeasures',
       key: 'strMeasure2',
     },
   },
@@ -135,7 +153,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkMeasures',
+      model: 'mealMeasures',
       key: 'strMeasure3',
     },
   },
@@ -143,7 +161,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkMeasures',
+      model: 'mealMeasures',
       key: 'strMeasure4',
     },
   },
@@ -151,7 +169,7 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkMeasures',
+      model: 'mealMeasures',
       key: 'strMeasure5',
     },
   },
@@ -159,18 +177,18 @@ DrinksModel.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: 'drinkMeasures',
+      model: 'mealMeasures',
       key: 'strMeasure6',
     },
   },
 }, {
   underscored: false,
   sequelize: db,
-  tableName: 'drinks',
+  tableName: 'meals',
   timestamps: false,
 });
 
-DrinksModel.belongsTo(DrinkCategoriesModel, {
+MealsModel.belongsTo(MealCategoriesModel, {
   foreignKey: 'idCategory',
   as: 'categories',
 })
