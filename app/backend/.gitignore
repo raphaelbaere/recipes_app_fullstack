@@ -1,0 +1,8 @@
+node_modules.tar.gz
+/build
+/backend/node_modules
+/frontend/node_modules
+/node_modules
+node_modules
+.env
+*.http
