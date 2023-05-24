@@ -1,6 +1,7 @@
 import * as express from 'express';
 import 'express-async-errors';
 import errorMiddleware from './middlewares/error.middleware';
+import routes from './routes';
 
 class App {
   public app: express.Express;
@@ -10,6 +11,7 @@ class App {
 
     this.config();
     this.app.use(errorMiddleware);
+    this.app.use(routes);
   }
 
   private config():void {

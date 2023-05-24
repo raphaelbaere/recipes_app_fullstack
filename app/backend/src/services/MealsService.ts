@@ -1,14 +1,14 @@
 import { StatusCodes } from 'http-status-codes';
 import ApiError from '../utils/ApiError';
-import MealModel, { MealAttributes } from '../database/models/MealModel';
+import MealModel, { MealsAttributes } from '../database/models/MealsModel';
 
 export default class MealsService {
-  public static async getAll(): Promise<MealAttributes[]> {
+  public static async getAll(): Promise<MealsAttributes[]> {
     const meals = await MealModel.findAll();
     return meals;
   }
 
-  public static async findOne(idMeal: string): Promise<MealAttributes> {
+  public static async findOne(idMeal: string): Promise<MealsAttributes> {
     const meals = await MealModel.findOne({
       where: {
         idMeal,
