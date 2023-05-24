@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { MealsAttributes } from '../database/models/MealsModel';
 import MealsService from '../services/MealsService';
-import { StatusCodes } from 'http-status-codes';
+// import { StatusCodes } from 'http-status-codes';
 
 export default class MealsController {
   constructor(
@@ -14,9 +14,9 @@ export default class MealsController {
     const meals = await MealsService.getAll();
     if (q) {
       const filteredMealsByName = meals.filter((meal) => meal.strMeal.includes(q as string));
-      return res.status(StatusCodes.OK).json(filteredMealsByName);
+      return res.status(200).json(filteredMealsByName);
     }
-    return res.status(StatusCodes.OK).json(meals);
+    return res.status(200).json(meals);
   };
 
   public static findByFirstLetter = async (req: Request, res: Response):
@@ -24,13 +24,13 @@ export default class MealsController {
     const { q } = req.query;
     const meals = await MealsService.getAll();
     const filteredMealsByFirstLetter = meals.filter((meal) => meal.strMeal.startsWith(q as string));
-    return res.status(StatusCodes.OK).json(filteredMealsByFirstLetter);
+    return res.status(200).json(filteredMealsByFirstLetter);
   };
 
   public static getRandom = async (req: Request, res: Response):
   Promise<Response<MealsAttributes>> => {
     const randomNumber = (Math.random() * 6).toString()
     const meal = await MealsService.findOne(randomNumber);
-    return res.status(StatusCodes.OK).json(meal);
+    return res.status(200).json(meal);
   };
 }

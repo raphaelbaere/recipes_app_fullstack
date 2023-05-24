@@ -1,22 +1,21 @@
-import { StatusCodes } from 'http-status-codes';
 import ApiError from '../utils/ApiError';
-import DrinkModel, { DrinkAttributes } from '../database/models/Drink';
+import DrinkModel, { DrinksAttributes } from '../database/models/DrinksModel';
 
 export default class DrinksService {
-  static async getAllDrinks(): Promise<DrinkAttributes[]> {
+  static async getAllDrinks(): Promise<DrinksAttributes[]> {
     const drinks = await DrinkModel.findAll();
 
     return drinks;
   }
 
-  static async findOneRandom(idDrink: number): Promise<DrinkAttributes> {
+  static async findOneRandom(idDrink: number): Promise<DrinksAttributes> {
     const randomDrink = await DrinkModel.findOne({
       where: {
         idDrink,
       },
     });
 
-    if (!randomDrink) throw new ApiError(StatusCodes.UNAUTHORIZED, 'Invalid ID!');
+    if (!randomDrink) throw new ApiError(401, 'Invalid ID!');
 
     return randomDrink;
   }

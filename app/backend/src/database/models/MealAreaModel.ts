@@ -25,7 +25,7 @@ MealAreaModel.init({
   timestamps: false,
 });
 
-MealAreaModel.hasMany(MealsModel, {
-  foreignKey: 'idArea',
-  as: 'area',
-});
+// MealAreaModel.hasMany(MealsModel, {
+//   foreignKey: 'idArea',
+//   as: 'area',
+// });

@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import DrinksService from '../services/DrinksService';
-import { StatusCodes } from 'http-status-codes';
 
 export default class DrinksController {
   static async getAll(req: Request, res: Response) {
@@ -8,25 +7,25 @@ export default class DrinksController {
     const drinks = await DrinksService.getAllDrinks();
 
     if(q) {
-      const filteredDrinks = drinks.filter((drink) => drink.strName.includes(q as string));
-      return res.status(StatusCodes.OK).json({ filteredDrinks });
+      const filteredDrinks = drinks.filter((drink) => drink.strDrink.includes(q as string));
+      return res.status(200).json({ filteredDrinks });
     }
 
-    return res.status(StatusCodes.OK).json({ drinks });
+    return res.status(200).json({ drinks });
   }
 
   static async findByFirstLetter(req: Request, res: Response) {
     const { q } = req.query;
     const drinks = await DrinksService.getAllDrinks();
-    const filteredDrinks = drinks.filter((drink) => drink.strName.startsWith(q as string));
+    const filteredDrinks = drinks.filter((drink) => drink.strDrink.startsWith(q as string));
 
-    return res.status(StatusCodes.OK).json({ filteredDrinks })
+    return res.status(200).json({ filteredDrinks })
   }
 
   static async getRandom(req: Request, res: Response) {
     const randomId = Math.floor(Math.random() * 7);
     const randomDrink = await DrinksService.findOneRandom(randomId);
 
-    return res.status(StatusCodes.OK).json({ randomDrink });
+    return res.status(200).json({ randomDrink });
   }
 }

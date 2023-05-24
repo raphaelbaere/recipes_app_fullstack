@@ -1,4 +1,4 @@
-import { StatusCodes } from 'http-status-codes';
+// import { StatusCodes } from 'http-status-codes';
 import ApiError from '../utils/ApiError';
 import MealModel, { MealsAttributes } from '../database/models/MealsModel';
 
@@ -15,7 +15,7 @@ export default class MealsService {
       },
     });
     if (!meals) {
-      throw new ApiError(StatusCodes.UNAUTHORIZED, 'Invalid ID');
+      throw new ApiError(401, 'Invalid ID');
     }
     return meals;
   }

@@ -25,7 +25,7 @@ DrinkIngredientsModel.init({
   timestamps: false,
 });
 
-DrinkIngredientsModel.hasMany(DrinksModel, {
-  foreignKey: 'idIngredient',
-  as: 'ingredients',
-});
+// DrinkIngredientsModel.hasMany(DrinksModel, {
+//   foreignKey: 'idIngredient',
+//   as: 'ingredients',
+// });

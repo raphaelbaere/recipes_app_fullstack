@@ -25,7 +25,7 @@ MealCategoriesModel.init({
   timestamps: false,
 });
 
-MealCategoriesModel.hasMany(MealsModel, {
-  foreignKey: 'idCategory',
-  as: 'categories',
-});
+// MealCategoriesModel.hasMany(MealsModel, {
+//   foreignKey: 'idCategory',
+//   as: 'categories',
+// });

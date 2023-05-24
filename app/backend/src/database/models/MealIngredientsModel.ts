@@ -25,7 +25,7 @@ MealIngredientsArea.init({
   timestamps: false,
 });
 
-MealIngredientsArea.hasMany(MealsModel, {
-  foreignKey: 'idIngredient',
-  as: 'ingredients',
-});
+// MealIngredientsArea.hasMany(MealsModel, {
+//   foreignKey: 'idIngredient',
+//   as: 'ingredients',
+// });
