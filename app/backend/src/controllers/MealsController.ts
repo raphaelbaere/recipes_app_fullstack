@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { MealsAttributes } from '../database/models/MealsModel';
 import MealsService from '../services/MealsService';
-// import { StatusCodes } from 'http-status-codes';
 
 export default class MealsController {
   constructor(
