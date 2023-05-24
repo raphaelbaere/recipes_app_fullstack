@@ -20,20 +20,20 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      // alcoholic: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      //   foreignKey: true,
-      //   references: { model: 'alcoholic', key: 'idAlcoholic' },
-      // },
-      // strInstructions: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      // },
-      // strDrinkThumb: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      // },
+      alcoholic: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: { model: 'alcoholics', key: 'idAlcoholic' },
+      },
+      strInstructions: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      strDrinkThumb: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       strIngredient1: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -70,42 +70,42 @@ module.exports = {
         foreignKey: true,
         references: { model: 'drinkIngredients', key: 'idIngredient' },
       },
-      // strMeasure1: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      //   foreignKey: true,
-      //   references: { model: 'drinkMeasures', key: 'idMeasure' },
-      // },
-      // strMeasure2: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      //   foreignKey: true,
-      //   references: { model: 'drinkMeasures', key: 'idMeasure' }, 
-      // },
-      // strMeasure3: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      //   foreignKey: true,
-      //   references: { model: 'drinkMeasures', key: 'idMeasure' }, 
-      // },
-      // strMeasure4: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      //   foreignKey: true,
-      //   references: { model: 'drinkMeasures', key: 'idMeasure' }, 
-      // },
-      // strMeasure5: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      //   foreignKey: true,
-      //   references: { model: 'drinkMeasures', key: 'idMeasure' }, 
-      // },
-      // strMeasure6: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      //   foreignKey: true,
-      //   references: { model: 'drinkMeasures', key: 'idMeasure' }, 
-      // },
+      strMeasure1: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: { model: 'drinkMeasures', key: 'idMeasure' },
+      },
+      strMeasure2: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: { model: 'drinkMeasures', key: 'idMeasure' }, 
+      },
+      strMeasure3: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: { model: 'drinkMeasures', key: 'idMeasure' }, 
+      },
+      strMeasure4: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: { model: 'drinkMeasures', key: 'idMeasure' }, 
+      },
+      strMeasure5: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: { model: 'drinkMeasures', key: 'idMeasure' }, 
+      },
+      strMeasure6: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: { model: 'drinkMeasures', key: 'idMeasure' }, 
+      },
     });
   },
 
