@@ -2,12 +2,12 @@ import { DataTypes, Model } from "sequelize";
 import MealsModel from "./MealsModel";
 import db from ".";
 
-export default class MealIngredientsArea extends Model {
+export default class MealIngredientsModel extends Model {
   declare idIngredient: number;
-  declare strIngredient: number;
+  declare strIngredient: number[];
 }
 
-MealIngredientsArea.init({
+MealIngredientsModel.init({
   idIngredient: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -15,7 +15,7 @@ MealIngredientsArea.init({
     autoIncrement: true,
   },
   strIngredient: {
-    type: DataTypes.STRING,
+    type: DataTypes.ARRAY,
     allowNull: false,
   },
 }, {
@@ -25,7 +25,14 @@ MealIngredientsArea.init({
   timestamps: false,
 });
 
-// MealIngredientsArea.hasMany(MealsModel, {
-//   foreignKey: 'idIngredient',
-//   as: 'ingredients',
-// });
+MealIngredientsModel.belongsToMany(MealsModel, {
+  through: 'RecipesModel',
+  foreignKey: 'idIngredients',
+  as: 'meal'
+})
+
+MealsModel.belongsToMany(MealIngredientsModel, {
+  through: 'RecipesModel',
+  foreignKey: 'idMeal',
+  as: 'ingredients',
+});
