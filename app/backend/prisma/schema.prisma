@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id      String   @id @default(uuid())
+  name    String
+  recipes Recipe[]
+
+  @@map("categories")
+}
+
+model Area {
+  id      String   @id @default(uuid())
+  name    String
+  recipes Recipe[]
+
+  @@map("areas")
+}
+
+model Ingredient {
+  id               String             @id @default(uuid())
+  name             String
+  recipeIngredient RecipeIngredient[]
+
+  @@map("ingredients")
+}
+
+model Alcoholic {
+  id      String   @id @default(uuid())
+  name    String
+  recipes Recipe[]
+
+  @@map("alcoholics")
+}
+
+model Recipe {
+  id           String @id @default(uuid())
+  type         String
+  name         String
+  instructions String
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  areaId String?
+  area   Area?   @relation(fields: [areaId], references: [id])
+
+  alcoholicId String?
+  alcoholic   Alcoholic? @relation(fields: [alcoholicId], references: [id])
+
+  videoUrl String?
+  imageUrl String?
+
+  ingredients RecipeIngredient[]
+
+  @@map("recipes")
+}
+
+model RecipeIngredient {
+  recipeId     String
+  ingredientId String
+  measure      String
+
+  recipe     Recipe     @relation(fields: [recipeId], references: [id])
+  ingredient Ingredient @relation(fields: [ingredientId], references: [id])
+
+  @@id([recipeId, ingredientId])
+  @@map("recipe_ingredients")
+}

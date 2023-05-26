@@ -1,21 +1,26 @@
+import prismaClient from '../database/prismaClient';
 import ApiError from '../utils/ApiError';
-import MealModel, { MealsAttributes } from '../database/models/MealsModel';
 
 export default class MealsService {
-  public static async getAll(): Promise<MealsAttributes[]> {
-    const meals = await MealModel.findAll();
+  static async getAllMeals() {
+    const meals = await prismaClient.recipe.findMany({
+      where: {
+        type: 'Meal'
+      }
+    });
+
     return meals;
   }
 
-  public static async findOne(idMeal: string): Promise<MealsAttributes> {
-    const meals = await MealModel.findOne({
+  static async findOneRandom(id: string) {
+    const randomDrink = await prismaClient.recipe.findUnique({
       where: {
-        idMeal,
+        id
       },
     });
-    if (!meals) {
-      throw new ApiError(401, 'Invalid ID');
-    }
-    return meals;
+
+    if (!randomDrink) throw new ApiError(401, 'Invalid ID!');
+
+    return randomDrink;
   }
 }

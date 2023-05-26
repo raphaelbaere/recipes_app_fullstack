@@ -3,6 +3,8 @@ services:
   frontend:
     container_name: app_frontend
     build: ./frontend
+    volumes:
+      - ./frontend/src:/app-frontend/src
     ports:
       - 3000:3000
     working_dir: /app-frontend
@@ -25,27 +27,19 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    environment:
-      - APP_PORT=3001
-      - JWT_SECRET=jwt_secret
-      # Os dados abaixo se referem ao container `db`
-      # Dica: Relembre aqui da comunicação interna entre containers
-      - DB_USER=root
-      - DB_PASS=123456
-      - DB_HOST=db
-      - DB_PORT=3306
+    env_file:
+      - ./backend/.env
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3001"] # Caso utilize outra porta interna para o back, altere ela aqui também
       timeout: 10s
       retries: 5
   db:
-    image: mysql:8.0.32
-    container_name: db
+    container_name: app_db
+    build: ./db
     ports:
       - 3306:3306
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
-    restart: 'always'
+    env_file:
+      - ./db/.env
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"] # Deve aguardar o banco ficar operacional
       timeout: 10s

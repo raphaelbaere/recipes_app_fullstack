@@ -1,17 +1,21 @@
+import prismaClient from '../database/prismaClient';
 import ApiError from '../utils/ApiError';
-import DrinkModel, { DrinksAttributes } from '../database/models/DrinksModel';
 
 export default class DrinksService {
-  static async getAllDrinks(): Promise<DrinksAttributes[]> {
-    const drinks = await DrinkModel.findAll();
+  static async getAllDrinks() {
+    const drinks = await prismaClient.recipe.findMany({
+      where: {
+        type: 'drink'
+      }
+    });
 
     return drinks;
   }
 
-  static async findOneRandom(idDrink: number): Promise<DrinksAttributes> {
-    const randomDrink = await DrinkModel.findOne({
+  static async findOneRandom(id: string) {
+    const randomDrink = await prismaClient.recipe.findUnique({
       where: {
-        idDrink,
+        id
       },
     });
 

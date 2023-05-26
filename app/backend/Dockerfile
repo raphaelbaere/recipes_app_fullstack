@@ -7,11 +7,23 @@ WORKDIR /app-backend
 # Copiar os package.json e package-lock.json para o container
 COPY package*.json ./
 
-# Instalar as dependências Node
-RUN npm install
+# Copiar o diretório prisma para o container
+COPY prisma ./prisma/
+
+# Copiar o .env para o container
+COPY .env ./
+
+# Copiar o tsconfig.json para o container
+COPY tsconfig.json ./
 
 # Copiar o restante dos arquivos da aplicação para o container
 COPY . .
+
+# Instalar as dependências Node
+RUN npm install
+
+# Gerar o prisma client
+RUN npx prisma generate
 
 # Sinalize que aplicação expõe a porta 3001
 EXPOSE 3001
