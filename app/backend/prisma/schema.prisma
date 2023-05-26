@@ -71,6 +71,6 @@ model RecipeIngredient {
   recipe     Recipe     @relation(fields: [recipeId], references: [id])
   ingredient Ingredient @relation(fields: [ingredientId], references: [id])
 
-  @@id([recipeId, ingredientId])
+  @@id([recipeId, ingredientId, measure])
   @@map("recipe_ingredients")
 }
