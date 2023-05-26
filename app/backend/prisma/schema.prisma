@@ -10,6 +10,7 @@ datasource db {
 model Category {
   id      Int   @id @unique @default(autoincrement())
   name    String
+  type String
   recipes Recipe[]
 
   @@map("categories")
@@ -26,6 +27,7 @@ model Area {
 model Ingredient {
   id      Int   @id @unique @default(autoincrement())
   name             String
+  type String
   recipeIngredient RecipeIngredient[]
 
   @@map("ingredients")

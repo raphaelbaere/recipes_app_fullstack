@@ -10,7 +10,8 @@ export default class MealsController {
     const { q } = req.query;
     const meals = await MealsService.getAllMeals();
     if (q) {
-      const filteredMealsByName = meals.filter((meal) => meal.name.includes(q as string));
+      const qCaps = q.toString().toUpperCase();
+      const filteredMealsByName = meals.filter((meal) => meal.name.toUpperCase().includes(qCaps as string));
       return res.status(200).json(filteredMealsByName);
     }
     return res.status(200).json(meals);
@@ -18,8 +19,9 @@ export default class MealsController {
 
   public static findByFirstLetter = async (req: Request, res: Response) => {
     const { q } = req.query;
+    const qCaps = q?.toString().toUpperCase()
     const meals = await MealsService.getAllMeals();
-    const filteredMealsByFirstLetter = meals.filter((meal) => meal.name.startsWith(q as string));
+    const filteredMealsByFirstLetter = meals.filter((meal) => meal.name.toUpperCase().startsWith(qCaps as string));
     return res.status(200).json(filteredMealsByFirstLetter);
   };
 
@@ -27,5 +29,38 @@ export default class MealsController {
     const randomNumber = (Math.random() * 6)
     const meal = await MealsService.findOneRandom(randomNumber);
     return res.status(200).json(meal);
+  };
+
+  public static getAllCategories = async (req: Request, res: Response) => {
+    const { q } = req.query;
+    const categories = await MealsService.getAllCategories();
+    if (q) {
+      const qCaps = q.toString().toUpperCase();
+      const filteredCategoriesByName = categories.filter((category) => category.name.toUpperCase().includes(qCaps as string));
+      return res.status(200).json(filteredCategoriesByName);
+    }
+    return res.status(200).json(categories);
+  };
+
+  public static getAllAreas = async (req: Request, res: Response) => {
+    const { q } = req.query;
+    const areas = await MealsService.getAllAreas();
+    if (q) {
+      const qCaps = q.toString().toUpperCase();
+      const filteredAreasByName = areas.filter((area) => area.name.toUpperCase().includes(qCaps as string));
+      return res.status(200).json(filteredAreasByName);
+    }
+    return res.status(200).json(areas);
+  };
+
+  public static getAllIngredients = async (req: Request, res: Response) => {
+    const { q } = req.query;
+    const ingredients = await MealsService.getAllIngredients();
+    if (q) {
+      const qCaps = q.toString().toUpperCase();
+      const filteredIngredientsByName = ingredients.filter((ingredient) => ingredient.name.toUpperCase().includes(qCaps as string));
+      return res.status(200).json(filteredIngredientsByName);
+    }
+    return res.status(200).json(ingredients);
   };
 }

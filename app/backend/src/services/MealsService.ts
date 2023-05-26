@@ -9,6 +9,8 @@ export default class MealsService {
       },
       include: {
         ingredients: true,
+        category: true,
+        area: true,
     }
     });
 
@@ -16,15 +18,47 @@ export default class MealsService {
   }
 
   static async findOneRandom(id: number) {
-    const randomDrink = await prismaClient.recipe.findUnique({
+    const randomMeal = await prismaClient.recipe.findUnique({
       where: {
         id,
+        type: 'Meal',
       },
-
+      include: {
+        ingredients: true,
+        category: true,
+        area: true,
+    }
     });
 
-    if (!randomDrink) throw new ApiError(401, 'Invalid ID!');
+    if (!randomMeal) throw new ApiError(401, 'Invalid ID!');
 
-    return randomDrink;
+    return randomMeal;
+  }
+
+
+  static async getAllCategories() {
+    const categories = await prismaClient.category.findMany({
+      where: {
+        type: 'Meal',
+      }
+    })
+
+    return categories;
+  }
+
+  static async getAllAreas() {
+    const areas = await prismaClient.area.findMany()
+
+    return areas;
+  }
+
+  static async getAllIngredients() {
+    const ingredients = await prismaClient.ingredient.findMany({
+      where: {
+        type: 'Meal',
+      }
+    })
+
+    return ingredients;
   }
 }
