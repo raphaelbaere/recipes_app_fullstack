@@ -38,5 +38,20 @@ export const category = [
     id: 8,
     name: 'Dessert',
     type: 'Meal',
+  },
+  {
+    id: 9,
+    name: 'Ordinary Drink',
+    type: 'Drink',
+  },
+  {
+    id: 10,
+    name: 'Shot',
+    type: 'Drink',
+  },
+  {
+    id:11,
+    name: 'Coffee / Tea',
+    type: 'Drink', 
   }
 ]

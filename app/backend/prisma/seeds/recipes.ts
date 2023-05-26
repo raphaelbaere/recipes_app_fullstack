@@ -59,4 +59,52 @@ export const recipes = [
     videoUrl: 'https://www.youtube.com/watch?v=fFLn1h80AGQ',
     imageUrl: 'https://www.themealdb.com/images/media/meals/txsupu1511815755.jpg'
   },
+  {
+    type: 'drink',
+    name: 'GG',
+    instructions: 'Pour the Galliano liqueur over ice. Fill the remainder of the glass with ginger ale and thats all there is to it. You now have a your very own GG.',
+    categoryId: 9,
+    alcoholicId: 2,
+    imageUrl: 'https://www.thecocktaildb.com/images/media/drink/vyxwut1468875960.jpg'
+  },
+  {
+    type: 'drink',
+    name: '747',
+    instructions: 'pour kaluha, then Baileys, then Frangelico not chilled and not layered -- SERVE!!!',
+    categoryId: 10,
+    alcoholicId: 2,
+    imageUrl: 'https://www.thecocktaildb.com/images/media/drink/xxsxqy1472668106.jpg'
+  },
+  {
+    type: 'drink',
+    name: '50/50',
+    instructions: 'fill glass with crushed ice. Add vodka. Add a splash of grand-marnier. Fill with o.j.',
+    categoryId: 9,
+    alcoholicId: 2,
+    imageUrl: 'https://www.thecocktaildb.com/images/media/drink/wwpyvr1461919316.jpg'
+  },
+  {
+    type: 'drink',
+    name: 'Melya',
+    instructions: 'Brew espresso. In a coffee mug, place 1 teaspoon of unsweetened powdered cocoa, then cover a teaspoon with honey and drizzle it into the cup. Stir while the coffee brews, this is the fun part. The cocoa seems to coat the honey without mixing, so you get a dusty, sticky mass that looks as though it will never mix. Then all at once, presto! It looks like dark chocolate sauce. Pour hot espresso over the honey, stirring to dissolve. Serve with cream.',
+    categoryId: 11,
+    alcoholicId: 4,
+    imageUrl: 'https://www.thecocktaildb.com/images/media/drink/xwtptq1441247579.jpg'
+  },
+  {
+    type: 'drink',
+    name: 'AT&T',
+    instructions: 'Pour Vodka and Gin over ice, add Tonic and Stir',
+    categoryId: 9,
+    alcoholicId: 2,
+    imageUrl: 'https://www.thecocktaildb.com/images/media/drink/rhhwmp1493067619.jpg'
+  },
+  {
+    type: 'drink',
+    name: 'B-53',
+    instructions: 'Layer the Kahlua, Sambucca and Grand Marnier into a shot glas in that order. Better than B-52',
+    categoryId: 10,
+    alcoholicId: 2,
+    imageUrl: 'https://www.thecocktaildb.com/images/media/drink/rwqxrv1461866023.jpg'
+  }
 ]

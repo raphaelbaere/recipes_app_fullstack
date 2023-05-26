@@ -11,7 +11,7 @@ export default class DrinksController {
       return res.status(200).json({ filteredDrinks });
     }
 
-    return res.status(200).json({ drinks });
+    return res.status(200).json(drinks);
   }
 
   static async findByFirstLetter(req: Request, res: Response) {
@@ -27,5 +27,11 @@ export default class DrinksController {
     const randomDrink = await DrinksService.findOneRandom(randomId);
 
     return res.status(200).json({ randomDrink });
+  }
+
+  static async getAllDrinksCategories(req: Request, res: Response) {
+    const categories = await DrinksService.getAllDrinksCategories();
+
+    return res.status(200).json(categories);
   }
 }

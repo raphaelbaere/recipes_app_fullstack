@@ -5,10 +5,13 @@ export default class DrinksService {
   static async getAllDrinks() {
     const drinks = await prismaClient.recipe.findMany({
       where: {
-        type: 'drink'
+        type: 'Drink'
+      },
+      include: {
+        ingredients: true,
       }
     });
-
+[]
     return drinks;
   }
 
@@ -22,5 +25,15 @@ export default class DrinksService {
     if (!randomDrink) throw new ApiError(401, 'Invalid ID!');
 
     return randomDrink;
+  }
+
+  static async getAllDrinksCategories() {
+    const categories = await prismaClient.category.findMany({
+      where: {
+        type: 'Drink',
+      }
+    });
+
+    return categories;
   }
 }

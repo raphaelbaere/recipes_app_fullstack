@@ -259,4 +259,68 @@ export const ingredient = [
     name: 'Red Pepper Flakes',
     type: 'Meal',
   },
+  {
+    id: 55,
+    name: 'Galliano'
+  },
+  {
+    id: 56,
+    name: 'Ginger ale',
+  },
+  {
+    id: 57,
+    name: 'Ice',
+  },
+  {
+    id: 58,
+    name: 'Kahlua',
+  },
+  {
+    id: 59,
+    name: 'Baileys irish cream',
+  },
+  {
+    id: 60,
+    name: 'Frangelico',
+  },
+  {
+    id: 61,
+    name: 'Vanilla vodka',
+  },
+  {
+    id: 62,
+    name: 'Grand Marnier',
+  },
+  {
+    id: 63,
+    name: 'Orange juice',
+  },
+  {
+   id: 64,
+   name: 'Espresso',
+  },
+  {
+    id: 65,
+    name: 'Honey',
+  },
+  {
+    id: 66,
+    name: 'Cocoa powder',
+  },
+  {
+    id: 67,
+    name: 'Absolut Vodka',
+  },
+  {
+    id: 68,
+    name: 'Gin',
+  },
+  {
+    id: 69,
+    name: 'Tonic water',
+  },
+  {
+    id: 70,
+    name: 'Sambuca'
+  }
 ]

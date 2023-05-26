@@ -10,5 +10,9 @@ export const alcoholic = [
   {
     id: 3,
     name: 'Opcional',
+  },
+  {
+    id: 4,
+    name: 'Não Alcoólico',
   }
 ]

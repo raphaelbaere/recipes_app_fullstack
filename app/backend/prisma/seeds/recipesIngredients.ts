@@ -304,4 +304,74 @@ export const recipesIngredients = [
     ingredientId: 12,
     measure: 'garnish'
   },
+  {
+    recipeId: 7,
+    ingredientId: 55,
+    measure: '2 1/2 shots'
+  },
+  {
+    recipeId: 8,
+    ingredientId: 58,
+    measure: '1/3 part',
+  },
+  {
+    recipeId: 8,
+    ingredientId: 59,
+    measure: '1/3 part',
+  },
+  {
+    recipeId: 8,
+    ingredientId: 60,
+    measure: '1/3 part',
+  },
+  {
+    recipeId: 9,
+    ingredientId: 61,
+    measure: '2 1/2 oz',
+  },
+  {
+    recipeId: 9,
+    ingredientId: 62,
+    measure: '1 splash',
+  },
+  {
+    recipeId: 9,
+    ingredientId: 63,
+    measure: 'Fill with',
+  },
+  {
+    recipeId: 10,
+    ingredientId: 64,
+    measure: 'Unsweetened',
+  },
+  {
+    recipeId: 11,
+    ingredientId: 67,
+    measure: '1 oz',
+  },
+  {
+    recipeId: 11,
+    ingredientId: 68,
+    measure: '1 oz',
+  },
+  {
+    recipeId: 11,
+    ingredientId: 69,
+    measure: '4 oz',
+  },
+  {
+    recipeId: 12,
+    ingredientId: 58,
+    measure: '1/3 shot',
+  },
+  {
+    recipeId: 12,
+    ingredientId: 70,
+    measure: '1/3 shot',
+  },
+  {
+    recipeId: 12,
+    ingredientId: 62,
+    measure: '1/3 shot',
+  },
 ]
