@@ -29,9 +29,26 @@ export default class DrinksController {
     return res.status(200).json({ randomDrink });
   }
 
-  static async getAllDrinksCategories(req: Request, res: Response) {
+  public static getAllDrinksCategories = async (req: Request, res: Response) => {
+    const { q } = req.query;
     const categories = await DrinksService.getAllDrinksCategories();
-
+    if (q) {
+      const qCaps = q.toString().toUpperCase();
+      const filteredCategoriesByName = categories.filter((category) => category.name.toUpperCase().includes(qCaps as string));
+      return res.status(200).json(filteredCategoriesByName);
+    }
     return res.status(200).json(categories);
-  }
+  };
+
+  public static getAllDrinksIngredients = async (req: Request, res: Response) => {
+    const { q } = req.query;
+    const ingredients = await DrinksService.getAllDrinksIngredients();
+    if (q) {
+      const qCaps = q.toString().toUpperCase();
+      const filteredIngredientsByName = ingredients.filter((ingredient) => ingredient.name.toUpperCase().includes(qCaps as string));
+      return res.status(200).json(filteredIngredientsByName);
+    }
+    return res.status(200).json(ingredients);
+  };
+  
 }

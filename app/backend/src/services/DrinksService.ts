@@ -36,4 +36,14 @@ export default class DrinksService {
 
     return categories;
   }
+
+  static async getAllDrinksIngredients() {
+    const ingredients = await prismaClient.ingredient.findMany({
+      where: {
+        type: 'Drink',
+      }
+    })
+
+    return ingredients;
+  }
 }

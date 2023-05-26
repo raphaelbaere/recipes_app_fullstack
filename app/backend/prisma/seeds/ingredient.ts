@@ -261,66 +261,82 @@ export const ingredient = [
   },
   {
     id: 55,
-    name: 'Galliano'
+    name: 'Galliano',
+    type: 'Drinks'
   },
   {
     id: 56,
     name: 'Ginger ale',
+    type: 'Drinks'
   },
   {
     id: 57,
     name: 'Ice',
+    type: 'Drinks'
   },
   {
     id: 58,
     name: 'Kahlua',
+    type: 'Drinks'
   },
   {
     id: 59,
     name: 'Baileys irish cream',
+    type: 'Drinks'
   },
   {
     id: 60,
     name: 'Frangelico',
+    type: 'Drinks'
   },
   {
     id: 61,
     name: 'Vanilla vodka',
+    type: 'Drinks'
   },
   {
     id: 62,
     name: 'Grand Marnier',
+    type: 'Drinks'
   },
   {
     id: 63,
     name: 'Orange juice',
+    type: 'Drinks'
   },
   {
-   id: 64,
-   name: 'Espresso',
+    id: 64,
+    name: 'Espresso',
+    type: 'Drinks'
   },
   {
     id: 65,
     name: 'Honey',
+    type: 'Drinks'
   },
   {
     id: 66,
     name: 'Cocoa powder',
+    type: 'Drinks'
   },
   {
     id: 67,
     name: 'Absolut Vodka',
+    type: 'Drinks'
   },
   {
     id: 68,
     name: 'Gin',
+    type: 'Drinks'
   },
   {
     id: 69,
     name: 'Tonic water',
+    type: 'Drinks'
   },
   {
     id: 70,
-    name: 'Sambuca'
+    name: 'Sambuca',
+    type: 'Drinks'
   }
 ]
