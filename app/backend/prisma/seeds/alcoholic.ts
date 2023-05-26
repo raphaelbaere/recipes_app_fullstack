@@ -1,14 +1,14 @@
 export const alcoholic = [
   {
+    id: 1,
     name: 'Pouco Alcoólico',
-    recipes: []
   },
   {
+    id: 2,
     name: 'Alcoólico',
-    recipes: []
   },
   {
+    id: 3,
     name: 'Opcional',
-    recipes: []
   }
 ]

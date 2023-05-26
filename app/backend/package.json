@@ -7,7 +7,8 @@
     "build": "tsc --project tsconfig.json",
     "start": "node ./build/server.js",
     "dev": "tsnd --watch \"./src/**\" --transpile-only ./src/server.ts",
-    "lint": "eslint ./src --ext .ts"
+    "lint": "eslint ./src --ext .ts",
+    "seed": "ts-node ./prisma/seed.ts"
   },
   "keywords": [],
   "author": "Antonio, Raphael e Gabriel",
@@ -43,6 +44,7 @@
     "jest": "27.4.3",
     "joi": "^17.9.2",
     "jsonwebtoken": "8.5.1",
+    "mysql": "^2.18.1",
     "mysql2": "2.3.3"
   }
 }

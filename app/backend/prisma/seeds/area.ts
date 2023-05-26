@@ -1,22 +1,22 @@
 export const area = [
   {
+    id: 1,
     name: 'American',
-    recipes: []
   },
   {
+    id: 2,
     name: 'British',
-    recipes: []
   },
   {
+    id: 3,
     name: 'Canadian',
-    recipes: []
   },
   {
+    id: 4,
     name: 'Chinese',
-    recipes: []
   },
   {
+    id: 5,
     name: 'Dutch',
-    recipes: []
   },
 ]

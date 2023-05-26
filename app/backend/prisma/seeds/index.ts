@@ -2,7 +2,7 @@ import {alcoholic} from './alcoholic';
 import {area} from './area';
 import {category} from './category';
 import { recipesIngredients } from './recipesIngredients';
-import { recipe } from './recipe';
+import { recipes } from './recipes';
 import { ingredient } from './ingredient';
 
 export {
@@ -10,6 +10,6 @@ export {
   area,
   category,
   recipesIngredients,
-  recipe,
+  recipes,
   ingredient
 }

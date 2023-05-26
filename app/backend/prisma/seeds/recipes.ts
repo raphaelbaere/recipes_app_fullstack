@@ -1,4 +1,4 @@
-export const recipe = [
+export const recipes = [
   {
     type: 'meal',
     name: 'Bacon Sandwich',

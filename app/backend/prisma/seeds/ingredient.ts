@@ -1,38 +1,38 @@
 export const ingredient = [
   {
+    id: 1,
     name: 'Bacon',
-    recipeIngredient: []
   },
   {
+    id: 2,
     name: 'Bread',
-    recipeIngredient: []
   },
   {
+    id: 3,
     name: 'Butter',
-    recipeIngredient: []
   },
   {
+    id: 4,
     name: 'Cheese',
-    recipeIngredient: []
   },
   {
+    id: 5,
     name: 'Chicken',
-    recipeIngredient: []
   },
   {
+    id: 6,
     name: 'Chocolate',
-    recipeIngredient: []
   },
   {
+    id: 7,
     name: 'Egg',
-    recipeIngredient: []
   },
   {
+    id: 8,
     name: 'Fish',
-    recipeIngredient: []
   },
   {
+    id: 9,
     name: 'Flour',
-    recipeIngredient: []
   },
 ]

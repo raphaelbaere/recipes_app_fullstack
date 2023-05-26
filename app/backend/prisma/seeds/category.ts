@@ -1,22 +1,22 @@
 export const category = [
   {
+    id: 1,
     name: 'Entrada',
-    recipes: []
   },
   {
+    id: 2,
     name: 'Prato Principal',
-    recipes: []
   },
   {
+    id: 3,
     name: 'Sobremesa',
-    recipes: []
   },
   {
+    id: 4,
     name: 'Acompanhamento',
-    recipes: []
   },
   {
+    id: 5,
     name: 'Lanche',
-    recipes: []
   },
 ]
