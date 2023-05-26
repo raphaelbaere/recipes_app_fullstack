@@ -19,4 +19,16 @@ export const area = [
     id: 5,
     name: 'Dutch',
   },
+  {
+    id: 6,
+    name: 'Turkish',
+  },
+  {
+    id: 7,
+    name: 'Indian',
+  },
+  {
+    id: 8,
+    name: 'Italian',
+  }
 ]

@@ -43,7 +43,7 @@ model Recipe {
   id      Int   @id @unique @default(autoincrement())
   type         String
   name         String
-  instructions String
+  instructions String @db.Text
 
   categoryId Int
   category   Category @relation(fields: [categoryId], references: [id])
@@ -56,6 +56,7 @@ model Recipe {
 
   videoUrl String?
   imageUrl String?
+  tags String?
 
   ingredients RecipeIngredient[]
 

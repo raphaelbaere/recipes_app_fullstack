@@ -9,7 +9,7 @@ async function main() {
   await prismaClient.category.createMany({ data: seed.category });
   await prismaClient.ingredient.createMany({ data: seed.ingredient });
   await prismaClient.recipe.createMany({ data: seed.recipes });
-  await prismaClient.recipesIngredients.createMany({ data: seed.recipesIngredients });
+  await prismaClient.recipeIngredient.createMany({ data: seed.recipesIngredients });
 }
 
 main().catch((e) => {

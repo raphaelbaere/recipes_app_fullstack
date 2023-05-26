@@ -19,4 +19,16 @@ export const category = [
     id: 5,
     name: 'Lanche',
   },
+  {
+    id: 6,
+    name: 'Vegetariano',
+  },
+  {
+    id: 7,
+    name: 'Pasta',
+  },
+  {
+    id: 8,
+    name: 'Dessert',
+  }
 ]

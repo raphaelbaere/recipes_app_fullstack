@@ -6,7 +6,7 @@ export default class DrinksController {
     const { q } = req.query;
     const drinks = await DrinksService.getAllDrinks();
 
-    if(q) {
+    if (q) {
       const filteredDrinks = drinks.filter((drink) => drink.name.includes(q as string));
       return res.status(200).json({ filteredDrinks });
     }
