@@ -11,6 +11,7 @@ COPY package*.json ./
 COPY prisma ./prisma/
 
 # Copiar o .env para o container
+COPY .env ./
 
 # Copiar o tsconfig.json para o container
 COPY tsconfig.json ./

@@ -22,7 +22,7 @@ export default class DrinksService {
       },
     });
 
-    if (!randomDrink) throw new ApiError(401, 'Invalid ID!!');
+    if (!randomDrink) throw new ApiError(401, 'Invalid ID!');
 
     return randomDrink;
   }
