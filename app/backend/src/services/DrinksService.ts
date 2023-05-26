@@ -16,13 +16,13 @@ export default class DrinksService {
   }
 
   static async findOneRandom(id: number) {
-    const randomDrink = await prismaClient.recipe.findUnique({
+    const randomDrink = await prismaClient.recipe.findMany({
       where: {
         id
       },
     });
 
-    if (!randomDrink) throw new ApiError(401, 'Invalid ID!');
+    if (!randomDrink) throw new ApiError(401, 'Invalid ID!!');
 
     return randomDrink;
   }

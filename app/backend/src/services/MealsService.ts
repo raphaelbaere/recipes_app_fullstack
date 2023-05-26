@@ -18,7 +18,7 @@ export default class MealsService {
   }
 
   static async findOneRandom(id: number) {
-    const randomMeal = await prismaClient.recipe.findUnique({
+    const randomMeal = await prismaClient.recipe.findMany({
       where: {
         id,
         type: 'Meal',
