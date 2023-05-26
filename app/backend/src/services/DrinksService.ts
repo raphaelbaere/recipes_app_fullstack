@@ -12,7 +12,7 @@ export default class DrinksService {
     return drinks;
   }
 
-  static async findOneRandom(id: string) {
+  static async findOneRandom(id: number) {
     const randomDrink = await prismaClient.recipe.findUnique({
       where: {
         id

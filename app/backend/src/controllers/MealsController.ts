@@ -24,7 +24,7 @@ export default class MealsController {
   };
 
   public static getRandom = async (req: Request, res: Response) => {
-    const randomNumber = (Math.random() * 6).toString()
+    const randomNumber = (Math.random() * 6)
     const meal = await MealsService.findOneRandom(randomNumber);
     return res.status(200).json(meal);
   };

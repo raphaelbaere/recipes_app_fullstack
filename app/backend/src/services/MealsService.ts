@@ -6,17 +6,21 @@ export default class MealsService {
     const meals = await prismaClient.recipe.findMany({
       where: {
         type: 'Meal'
-      }
+      },
+      include: {
+        ingredients: true,
+    }
     });
 
     return meals;
   }
 
-  static async findOneRandom(id: string) {
+  static async findOneRandom(id: number) {
     const randomDrink = await prismaClient.recipe.findUnique({
       where: {
-        id
+        id,
       },
+
     });
 
     if (!randomDrink) throw new ApiError(401, 'Invalid ID!');
